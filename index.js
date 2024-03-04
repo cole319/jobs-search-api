@@ -1,7 +1,10 @@
-//imports
+//package imports
 import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
+import cors from "cors";
+import morgan from "morgan";
+//internal imports
 import connectDB from "./config/db.js";
 import testRoutes from "./routes/testRoutes.js";
 
@@ -19,11 +22,8 @@ const PORT = process.env.PORT || 8080;
 
 //middlewares
 app.use(express.json());
-
-//routes
-// app.get("/", (req, res) => {
-//   res.send("<h1>hello from Jobs API server</h1>");
-// });
+app.use(cors());
+app.use(morgan("dev"));
 
 //routes
 app.use("/api/v1/test", testRoutes);
