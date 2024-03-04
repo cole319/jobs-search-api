@@ -2,12 +2,12 @@
 import express from "express";
 
 //internal imports
-import { testPostController } from "../controllers/testController.js";
+import { registerController } from "../controllers/authController.js";
 
 //router object
 const router = express.Router();
 
-//routes
-router.post("/test-post", testPostController);
+//route
+router.post("/register-post", registerController);
 
 export default router;

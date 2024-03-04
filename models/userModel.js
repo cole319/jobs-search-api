@@ -11,11 +11,10 @@ const userSchema = new mongoose.Schema(
     lastName: {
       type: String,
     },
-
     email: {
-      typeo: String,
+      type: String,
       required: [true, "Required Field"],
-      uinque: true,
+      unique: true,
       validate: validator.isEmail,
     },
     password: {
