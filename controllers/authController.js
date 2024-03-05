@@ -1,7 +1,7 @@
 //internal imports
 import userModel from "../models/userModel.js";
 
-export const registerController = async (req, res) => {
+export const registerController = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
 
@@ -37,11 +37,6 @@ export const registerController = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.log(error);
-    res.status(400).send({
-      success: false,
-      message: "Something went wrong",
-      error,
-    });
+    next(error);
   }
 };

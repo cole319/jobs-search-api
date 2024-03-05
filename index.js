@@ -9,6 +9,7 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import testRoutes from "./routes/testRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import errorMiddleware from "./middlewares/errorMiddleware.js";
 
 //dotenv config
 dotenv.config();
@@ -30,6 +31,9 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/test", authRoutes);
+
+//validation middleware
+app.use(errorMiddleware); //app will crash if specified before routes
 
 //listen
 app.listen(PORT, () => {
