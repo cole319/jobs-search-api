@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import colors from "colors";
 import cors from "cors";
 import morgan from "morgan";
+import "express-async-errors";
 
 //internal imports
 import connectDB from "./config/db.js";
