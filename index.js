@@ -31,7 +31,7 @@ app.use(morgan("dev"));
 
 //routes
 app.use("/api/v1/test", testRoutes);
-app.use("/api/v1/test", authRoutes);
+app.use("/api/v1/auth", authRoutes);
 
 //validation middleware
 app.use(errorMiddleware); //app will crash if specified before routes
