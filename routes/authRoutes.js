@@ -15,6 +15,6 @@ const router = express.Router();
 router.post("/register-post", registerController);
 
 //Login || post
-router.post("/login", loginController);
+router.post("/login-post", loginController);
 
 export default router;
