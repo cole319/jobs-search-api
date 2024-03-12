@@ -10,6 +10,7 @@ import "express-async-errors";
 import connectDB from "./config/db.js";
 import testRoutes from "./routes/testRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import errorMiddleware from "./middlewares/errorMiddleware.js";
 
 //dotenv config
@@ -32,6 +33,7 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
 
 //validation middleware
 app.use(errorMiddleware); //app will crash if specified before routes
